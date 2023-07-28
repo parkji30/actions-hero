@@ -10,18 +10,17 @@ on:
   workflow_dispatch:
 
 jobs:
-  
-  hello:
+  hello world:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.PAT_TOKEN }}
-      - name: hello world
-        run: echo "Hello world"
-        shell: bash
-        with:
-          token: ${{ secrets.PAT_TOKEN }}
+      # - name: hello world
+      #   run: echo "Hello world"
+      #   shell: bash
+      #   with:
+      #     token: ${{ secrets.PAT_TOKEN }}
 
   # goodbye:
   #   runs-on: ubuntu-latest
