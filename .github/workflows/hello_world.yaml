@@ -15,13 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        # with:
-        #   token: ${{ secrets.PAT_TOKEN }}
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
       - name: hello world
-        # with:
-        #   token: ${{ secrets.PAT_TOKEN }}
         run: echo "Hello world"
         shell: bash
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
 
   # goodbye:
   #   runs-on: ubuntu-latest
