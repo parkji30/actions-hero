@@ -19,11 +19,27 @@ jobs:
       - name: hello world
         run: echo "Hello world"
         shell: bash
+
+      - name: Use Personal Access Token
+          env:
+            PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+          run: |
+            # Use the $PAT_TOKEN environment variable in your commands to interact with the GitHub API or perform other actions.
+            echo "My Personal Access Token: $PAT_TOKEN"
+
   goodbye:
     runs-on: ubuntu-latest
+
     steps:
       - name: goodbye world
         with:
           token: ${{ secrets.GIT_PAT }}
         run: echo "Good bye world"
         shell: bash 
+
+      - name: Use Personal Access Token
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          # Use the $PAT_TOKEN environment variable in your commands to interact with the GitHub API or perform other actions.
+          echo "My Personal Access Token: $PAT_TOKEN"
