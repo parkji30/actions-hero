@@ -21,4 +21,4 @@ jobs:
     steps:
       - name: goodbye world
           run: echo "Good bye world"
-          shell": bash 
+          shell: bash 
