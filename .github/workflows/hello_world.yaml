@@ -1,9 +1,9 @@
 name: Hello world workflow
 
 on:
-  [push]
-    # branches:
-      # -'**'
+  push:
+    branches:
+      -main
   pull_request:
     branches:
       -main
@@ -15,29 +15,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.PAT_TOKEN }}
+        # with:
+        #   token: ${{ secrets.PAT_TOKEN }}
       - name: hello world
-        with:
-          token: ${{ secrets.PAT_TOKEN }}
+        # with:
+        #   token: ${{ secrets.PAT_TOKEN }}
         run: echo "Hello world"
         shell: bash
 
-  goodbye:
-    runs-on: ubuntu-latest
-    steps:
-      - name: goodbye world
-        with:
-          token: ${{ secrets.PAT_TOKEN }}
-        run: echo "Good bye world"
-        shell: bash 
+  # goodbye:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: goodbye world
+  #       with:
+  #         token: ${{ secrets.PAT_TOKEN }}
+  #       run: echo "Good bye world"
+  #       shell: bash 
 
-  pat_token_output:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Use Personal Access Token
-        with:
-          token: ${{ secrets.PAT_TOKEN }}
-        run: |
-            # Use the $PAT_TOKEN environment variable in your commands to interact with the GitHub API or perform other actions.
-            echo "My Personal Access Token: ${{ secrets.PAT_TOKEN }}"
+  # pat_token_output:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Use Personal Access Token
+  #       with:
+  #         token: ${{ secrets.PAT_TOKEN }}
+  #       run: |
+  #           # Use the $PAT_TOKEN environment variable in your commands to interact with the GitHub API or perform other actions.
+  #           echo "My Personal Access Token: ${{ secrets.PAT_TOKEN }}"
