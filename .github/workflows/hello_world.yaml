@@ -36,8 +36,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Use Personal Access Token
-          with:
-            token: ${{ secrets.PAT_TOKEN }}
-          run: |
-              # Use the $PAT_TOKEN environment variable in your commands to interact with the GitHub API or perform other actions.
-              echo "My Personal Access Token: ${{ secrets.PAT_TOKEN }}"
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+        run: |
+            # Use the $PAT_TOKEN environment variable in your commands to interact with the GitHub API or perform other actions.
+            echo "My Personal Access Token: ${{ secrets.PAT_TOKEN }}"
