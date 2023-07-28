@@ -10,13 +10,13 @@ on:
   workflow_dispatch:
 
 jobs:
+  
   hello:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.PAT_TOKEN }}
-
       - name: hello world
         with:
           token: ${{ secrets.PAT_TOKEN }}
@@ -25,7 +25,6 @@ jobs:
 
   goodbye:
     runs-on: ubuntu-latest
-
     steps:
       - name: goodbye world
         with:
@@ -33,10 +32,8 @@ jobs:
         run: echo "Good bye world"
         shell: bash 
 
-
   pat_token_output:
     runs-on: ubuntu-latest
-
     steps:
       - name: Use Personal Access Token
           with:
